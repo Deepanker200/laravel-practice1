@@ -1,5 +1,5 @@
 <div>
-    <span>
-        User Login Successfully
+    <span class="{{$class}}">
+        {{$msg}}
     </span>
 </div>
