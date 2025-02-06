@@ -14,7 +14,9 @@
     <form action="adduser" method="post">
         @csrf
         <div class="input-wrapper">
-            <input type="text" placeholder="Enter your name" name="username">
+            <input type="text" placeholder="Enter your name" name="username" value="{{ old('username') }}"
+            class="{{ $errors->first('username') ? 'input-error' : '' }}">
+
             <span style="color:red">
                 @error('username')
                     {{ $message }}
@@ -23,7 +25,8 @@
         </div>
 
         <div class="input-wrapper">
-            <input type="text" placeholder="Enter your email" name="email">
+            <input type="text" placeholder="Enter your email" name="email" value="{{ old('email') }}"
+                class="{{ $errors->first('email') ? 'input-error' : '' }}">
             <span style="color:red">
                 @error('email')
                     {{ $message }}
@@ -32,7 +35,9 @@
         </div>
 
         <div class="input-wrapper">
-            <input type="text" placeholder="Enter your city" name="city">
+            <input type="text" placeholder="Enter your city" name="city" value="{{ old('city') }}"
+            class="{{ $errors->first('city') ? 'input-error' : '' }}">
+
             <span style="color:red">
                 @error('city')
                     {{ $message }}
@@ -45,3 +50,9 @@
         </div>
     </form>
 </div>
+
+<style>
+    .input-error{
+        border: 2px solid red;
+    }
+    </style>
