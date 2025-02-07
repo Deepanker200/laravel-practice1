@@ -20,3 +20,5 @@ Route::get('/about', function () {
 
 Route::get('adduser',[UserController::class,'view']);
 Route::post('adduser',[UserController::class,'index']);
+
+Route::view('url','url');
