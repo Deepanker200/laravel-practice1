@@ -45,5 +45,19 @@ Route::controller(StudentController::class)->group(function () {
     Route::get('about/{name}', 'about');
 });
 
+//Middleware Route
+Route::view('age', 'age');
 
-Route::view('age','age');
+//Middleware  Group
+
+Route::view('middleware1', 'middleware1')->middleware('check');
+Route::view('middleware2', 'middleware2')->middleware('check');
+
+
+
+Route::middleware('check')->group(function () {
+    Route::view('list', 'list');
+    Route::view('contact', 'contact');
+    Route::view('service', 'service');
+    Route::view('blog', 'blog');
+});
