@@ -44,3 +44,6 @@ Route::controller(StudentController::class)->group(function () {
     Route::get('delete', 'delete');
     Route::get('about/{name}', 'about');
 });
+
+
+Route::view('age','age');
