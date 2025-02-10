@@ -18,6 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
         //Registering a global middleware
         // $middleware->append(AgeCheck::class);
 
+        
         //Grouping in middleware
         $middleware->appendToGroup('check',[
             AgeCheck::class,

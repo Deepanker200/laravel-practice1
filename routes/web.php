@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\AgeCheck;
 
 
 Route::get('/', function () {
@@ -61,3 +62,8 @@ Route::middleware('check')->group(function () {
     Route::view('service', 'service');
     Route::view('blog', 'blog');
 });
+
+
+//Specific route middleware
+
+Route::view('middleware3','middleware2')->middleware(AgeCheck::class);
