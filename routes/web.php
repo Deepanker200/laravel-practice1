@@ -66,4 +66,4 @@ Route::middleware('check')->group(function () {
 
 //Specific route middleware
 
-Route::view('middleware3','middleware3')->middleware(AgeCheck::class);
+Route::view('middleware4','middleware4')->middleware(AgeCheck::class);
